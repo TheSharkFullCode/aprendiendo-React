@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Tokens de diseño: generan clases como bg-primario, text-rosa... */
+@theme {
+  --color-primario: #7c3aed;
+  --color-rosa: #ec4899;
+  --color-cian: #06b6d4;
+  --color-esmeralda: #10b981;
+  --color-ambar: #f59e0b;
+  --color-naranja: #f97316;
+  --color-tinta: #1e1b4b;
+  --color-papel: #ffffff;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --animate-aparecer: aparecer 0.4s ease-out both;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  @apply bg-papel text-tinta antialiased;
+}
+
+/* Fondo tipo hoja de cuaderno (cuadrícula suave) */
+.hoja {
+  background-image:
+    linear-gradient(to right, rgb(124 58 237 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(124 58 237 / 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.texto-degradado {
+  @apply bg-gradient-to-r from-primario via-rosa to-naranja bg-clip-text text-transparent;
+}
